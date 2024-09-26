@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hamburger {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+nav {
+    display: none; /* 初始狀態隱藏 */
+    position: absolute;
+    top: 60px; /* 漢堡菜單下方的高度 */
+    left: 20px; /* 距離左邊的距離 */
+    width: 150px; /* 調整下拉選單的寬度 */
+    z-index: 1000; /* 確保選單在其他內容之上 */
+}
+
+nav.active {
+    display: block; /* 當選單激活時顯示 */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #007BFF;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 增加陰影效果 */
+}
+
+nav ul li {
+    text-align: left; /* 左對齊 */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background: #0056b3;
+}
+
+.main-content {
+    padding: 20px;
+    max-width: 800px; /* 限制最大寬度 */
+    margin: 0 auto; /* 中心對齊 */
+    position: relative; /* 確保主內容不被選單遮住 */
+}
+
+.about-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.about-section h2 {
+    color: #007BFF;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #007BFF;
+    color: #fff;
+}
+
+.show {
+    display: block;
+}
