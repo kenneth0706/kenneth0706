@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水電媒合平台</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            &#9776; <!-- 漢堡選單圖示 -->
+        </div>
+        <h1>水電媒合平台</h1>
+        <nav id="navbar">
+            <ul>
+                <li><a href="register.html">註冊</a></li>
+                <li><a href="login.html">登入</a></li>
+                <li><a href="#plumbers">師傅列表</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+                <li><a href="about.html">關於本網站</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>歡迎來到水電媒合平台</h2>
+            <p>尋找專業的水電師傅，隨時解決您的問題！</p>
+        </section>
+
+        <section id="plumbers">
+            <h2>師傅列表</h2>
+            <div class="plumber-card" onclick="window.location='master1.html';">
+                <div class="plumber-info">
+                    <h3>張師傅</h3>
+                    <p>專業領域：水管修理</p>
+                    <p>自我介紹：專注於水管的安裝和維修，經驗豐富。</p>
+                    <button onclick="startChat('張師傅'); event.stopPropagation();">聯絡</button>
+                </div>
+                <img src="images/master3.png" alt="張師傅" class="plumber-photo">
+            </div>
+            <div class="plumber-card" onclick="window.location='master2.html';">
+                <div class="plumber-info">
+                    <h3>李師傅</h3>
+                    <p>專業領域：電路維修</p>
+                    <p>自我介紹：專精於電路系統的檢修，提供專業的服務。</p>
+                    <button onclick="startChat('李師傅'); event.stopPropagation();">聯絡</button>
+                </div>
+                <img src="images/master2.png" alt="李師傅" class="plumber-photo">
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>聯絡我們</h2>
+            <form id="contactForm">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">電子郵件：</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">需求描述：</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">送出</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 水電媒合平台</p>
+    </footer>
+
+    <!-- 聊天窗口 -->
+    <div id="chatWindow" class="chat-window">
+        <div class="chat-header">
+            <span id="chatTitle">與師傅聊天</span>
+            <button onclick="closeChat()">關閉</button>
+        </div>
+        <div class="chat-body" id="chatBody"></div>
+        <div class="chat-input">
+            <input type="text" id="chatMessage" placeholder="輸入訊息..." />
+            <button onclick="sendMessage()">發送</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+
+        function closeChat() {
+            document.getElementById('chatWindow').style.display = 'none';
+        }
+
+        function startChat(plumberName) {
+            document.getElementById('chatTitle').innerText = '與 ' + plumberName + ' 聊天';
+            document.getElementById('chatWindow').style.display = 'block';
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById('chatMessage');
+            const messageText = messageInput.value.trim();
+            if (messageText) {
+                const chatBody = document.getElementById('chatBody');
+                const messageElement = document.createElement('div');
+                messageElement.className = 'chat-message user-message';
+                messageElement.innerText = messageText;
+                chatBody.appendChild(messageElement);
+                messageInput.value = '';
+
+                // 隨機選擇回覆
+                const replies = [
+                    '謝謝您的訊息，我們會盡快回復您！',
+                    '您的問題已收到，我們正在處理中。',
+                    '感謝您的聯絡，稍後會有專人聯繫您。',
+                    '謝謝您的耐心，我們會儘快給您答覆。',
+                    '您的需求已記錄，請耐心等候。',
+                    '我們已經收到您的訊息，請稍後。',
+                    '感謝您的來信，我們會儘快回覆。',
+                    '我們正在檢視您的問題，稍後會聯絡您。',
+                    '感謝您的詢問，我們將盡快回復。',
+                    '謝謝您的提問，會有專業人員與您聯繫。'
+                ];
+                const randomReply = replies[Math.floor(Math.random() * replies.length)];
+                
+                // 師傅的回覆
+                const replyElement = document.createElement('div');
+                replyElement.className = 'chat-message plumber-message';
+                replyElement.innerText = randomReply;
+                chatBody.appendChild(replyElement);
+
+                chatBody.scrollTop = chatBody.scrollHeight; // 滾動到底部
+            }
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('感謝您的聯絡，我們將盡快回覆您！');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

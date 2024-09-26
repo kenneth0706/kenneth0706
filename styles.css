@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hamburger-menu {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+nav {
+    display: none; /* 初始狀態隱藏 */
+}
+
+nav.active {
+    display: block; /* 當選單激活時顯示 */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #007BFF;
+}
+
+nav ul li {
+    text-align: left; /* 左對齊 */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background: #0056b3;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px; /* 限制最大寬度 */
+    margin: 0 auto; /* 中心對齊 */
+}
+
+section {
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.plumber-card {
+    display: flex; /* 使用彈性盒模型 */
+    align-items: center; /* 垂直居中對齊 */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: transform 0.2s; /* 平滑的變換效果 */
+}
+
+.plumber-info {
+    flex: 1; /* 讓信息區域佔滿剩餘空間 */
+    margin-right: 15px; /* 右邊距 */
+}
+
+.plumber-card:hover {
+    transform: translateY(-5px); /* 當懸停時向上移動 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 增加陰影效果 */
+}
+
+.plumber-card h3 {
+    margin: 0 0 10px;
+}
+
+button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #007BFF;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* 聊天窗口樣式 */
+.chat-window {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    max-width: 90%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.chat-header {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-body {
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-input {
+    display: flex;
+}
+
+.chat-input input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* 聊天訊息樣式 */
+.chat-message {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #007BFF;
+    color: white;
+    align-self: flex-end; /* 使用者訊息靠右 */
+}
+
+.plumber-message {
+    background-color: #e2e2e2;
+    color: black;
+    align-self: flex-start; /* 師傅訊息靠左 */
+}
+
+/* 師傅照片樣式 */
+.plumber-photo {
+    width: 200px; /* 設定照片寬度 */
+    height: 200px; /* 高度自動，保持比例 */
+    border-radius: 8px; /* 圓角效果 */
+    margin-bottom: 10px; /* 下方間距 */
+}

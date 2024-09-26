@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* 背景顏色 */
+}
+
+.container {
+    max-width: 400px; /* 最大寬度 */
+    margin: 50px auto; /* 中心對齊 */
+    padding: 20px;
+    background: #fff; /* 容器背景 */
+    border-radius: 8px; /* 圓角 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 陰影 */
+}
+
+h2 {
+    text-align: center; /* 標題置中 */
+    color: #007BFF; /* 標題顏色 */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+}
+
+label {
+    margin-bottom: 5px;
+    color: #555; /* 標籤顏色 */
+}
+
+input, button {
+    padding: 10px; /* 內邊距 */
+    margin-bottom: 15px; /* 外邊距 */
+    border-radius: 5px; /* 圓角 */
+    border: 1px solid #ddd; /* 邊框顏色 */
+}
+
+input:focus {
+    border-color: #007BFF; /* 聚焦時邊框顏色 */
+    outline: none; /* 移除外部輪廓 */
+}
+
+button {
+    background-color: #007BFF; /* 按鈕背景顏色 */
+    color: white; /* 按鈕文字顏色 */
+    border: none; /* 移除邊框 */
+    cursor: pointer; /* 手型游標 */
+}
+
+button:hover {
+    background-color: #0056b3; /* 懸停時背景顏色 */
+}
+
+.home-button {
+    background-color: #0b85ef; /* 返回首頁按鈕背景 */
+    color: white; /* 返回首頁按鈕文字顏色 */
+    border: none; /* 移除邊框 */
+    cursor: pointer; /* 手型游標 */
+    padding: 10px; /* 內邊距 */
+    border-radius: 5px; /* 圓角 */
+}
+
+.home-button:hover {
+    background-color: #07487a; /* 返回首頁按鈕懸停時背景 */
+}
+
+.error {
+    color: red; /* 錯誤消息顏色 */
+    font-size: 0.9em; /* 字體大小 */
+    margin-top: -10px; /* 上邊距 */
+    margin-bottom: 10px; /* 下邊距 */
+}
+
+.success {
+    color: green; /* 成功消息顏色 */
+    font-size: 0.9em; /* 字體大小 */
+    margin-top: -10px; /* 上邊距 */
+    margin-bottom: 10px; /* 下邊距 */
+}
